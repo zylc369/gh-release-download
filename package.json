@@ -49,10 +49,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aserlili/gh-release-download.git"
+    "url": "https://github.com/zylc369/gh-release-download"
   },
   "bugs": {
-    "url": "https://github.com/aserlili/gh-release-download/issues"
+    "url": "https://github.com/zylc369/gh-release-download/issues"
   },
-  "homepage": "https://github.com/aserlili/gh-release-download#readme"
+  "homepage": "https://github.com/zylc369/gh-release-download#readme"
 }
