@@ -1,10 +1,10 @@
-# GitHub Release Download
+# bw-gh-release-fetch
 
-A powerful CLI tool and library to download files from GitHub Releases with glob pattern support.
+A powerful CLI tool and library to fetch files from GitHub Releases with glob pattern support.
 
 ## Features
 
-- 🚀 Download files from GitHub Releases using glob patterns
+- 🚀 Fetch files from GitHub Releases using glob patterns
 - 📦 Works as both CLI tool and npm library
 - 🔍 Match multiple files with glob patterns (e.g., `*-linux-x64.tar.gz`)
 - 🔐 Support for private repositories via GitHub token
@@ -17,22 +17,22 @@ A powerful CLI tool and library to download files from GitHub Releases with glob
 
 ```bash
 # Using npx (no installation needed)
-npx github-release-download <github-url> <patterns...>
+npx @zylc369/bw-gh-release-fetch <github-url> <patterns...>
 
 # Using bunx (no installation needed)
-bunx github-release-download <github-url> <patterns...>
+bunx @zylc369/bw-gh-release-fetch <github-url> <patterns...>
 
 # Or install globally
-npm install -g github-release-download
-github-release-download <github-url> <patterns...>
+npm install -g @zylc369/bw-gh-release-fetch
+bw-gh-release-fetch <github-url> <patterns...>
 ```
 
 ### As Library
 
 ```bash
-npm install github-release-download
+npm install @zylc369/bw-gh-release-fetch
 # or
-bun add github-release-download
+bun add @zylc369/bw-gh-release-fetch
 ```
 
 ## CLI Usage
@@ -41,33 +41,33 @@ bun add github-release-download
 
 ```bash
 # Download latest release
-github-release-download https://github.com/owner/repo "*.zip"
+bw-gh-release-fetch https://github.com/owner/repo "*.zip"
 
 # Download specific version
-github-release-download https://github.com/owner/repo "*.zip" -t v1.0.0
+bw-gh-release-fetch https://github.com/owner/repo "*.zip" -t v1.0.0
 
 # Download to specific directory
-github-release-download https://github.com/owner/repo "*.zip" -o ./downloads
+bw-gh-release-fetch https://github.com/owner/repo "*.zip" -o ./downloads
 
 # Multiple patterns
-github-release-download https://github.com/owner/repo "*-linux-*.tar.gz" "*-darwin-*.tar.gz"
+bw-gh-release-fetch https://github.com/owner/repo "*-linux-*.tar.gz" "*-darwin-*.tar.gz"
 ```
 
 ### List Assets
 
 ```bash
 # List all assets in latest release
-github-release-download https://github.com/owner/repo --list "*"
+bw-gh-release-fetch https://github.com/owner/repo --list "*"
 
 # List matched assets
-github-release-download https://github.com/owner/repo "*android*" --list
+bw-gh-release-fetch https://github.com/owner/repo "*android*" --list
 ```
 
 ### Private Repository
 
 ```bash
 # With GitHub token
-github-release-download https://github.com/owner/private-repo "*.zip" -k YOUR_GITHUB_TOKEN
+bw-gh-release-fetch https://github.com/owner/private-repo "*.zip" -k YOUR_GITHUB_TOKEN
 ```
 
 ### CLI Options
@@ -88,7 +88,7 @@ github-release-download https://github.com/owner/private-repo "*.zip" -k YOUR_GI
 ### Basic Usage
 
 ```typescript
-import { downloadFromGitHub } from 'github-release-download';
+import { downloadFromGitHub } from '@zylc369/bw-gh-release-fetch';
 
 await downloadFromGitHub(
   'https://github.com/frida/frida',
@@ -100,7 +100,7 @@ await downloadFromGitHub(
 ### With Options
 
 ```typescript
-import { downloadFromGitHub } from 'github-release-download';
+import { downloadFromGitHub } from '@zylc369/bw-gh-release-fetch';
 
 const results = await downloadFromGitHub(
   'https://github.com/owner/repo',
@@ -120,7 +120,7 @@ results.forEach(result => {
 ### Advanced Usage
 
 ```typescript
-import { GitHubReleaseDownloader } from 'github-release-download';
+import { GitHubReleaseDownloader } from '@zylc369/bw-gh-release-fetch';
 
 const downloader = new GitHubReleaseDownloader({
   token: process.env.GITHUB_TOKEN,
@@ -197,11 +197,14 @@ bun install
 # Build
 bun run build
 
+# Dev mode (run source directly)
+bun run dev --help
+
 # Type check
 bun run typecheck
 
 # Run tests
-bun test/test.ts
+bun run test
 ```
 
 ## Publishing
