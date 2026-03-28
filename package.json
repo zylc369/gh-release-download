@@ -1,0 +1,58 @@
+{
+  "name": "github-release-download",
+  "version": "0.1.0",
+  "description": "A CLI tool and library to download files from GitHub Releases with glob pattern support",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "github-release-download": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts ./src/cli.ts --outdir ./dist --target node && tsc --emitDeclarationOnly",
+    "dev": "bun src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test/test.ts",
+    "prepublishOnly": "bun run build && bun run typecheck",
+    "release": "npm publish",
+    "release:dry": "npm publish --dry-run"
+  },
+  "keywords": [
+    "github",
+    "release",
+    "download",
+    "cli",
+    "glob",
+    "asset"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "commander": "^12.0.0",
+    "minimatch": "^10.2.4",
+    "undici": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/minimatch": "^6.0.0",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aserlili/github-release-download"
+  },
+  "bugs": {
+    "url": "https://github.com/aserlili/github-release-download/issues"
+  },
+  "homepage": "https://github.com/aserlili/github-release-download#readme"
+}
