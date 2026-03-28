@@ -1,12 +1,12 @@
 {
-  "name": "github-release-download",
+  "name": "gh-release-download",
   "version": "0.1.0",
-  "description": "A CLI tool and library to download files from GitHub Releases with glob pattern support",
+  "description": "Download files from GitHub Releases with glob pattern support",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "github-release-download": "dist/cli.js"
+    "gh-release-download": "dist/cli.js"
   },
   "files": [
     "dist",
@@ -49,10 +49,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aserlili/github-release-download"
+    "url": "git+https://github.com/aserlili/gh-release-download.git"
   },
   "bugs": {
-    "url": "https://github.com/aserlili/github-release-download/issues"
+    "url": "https://github.com/aserlili/gh-release-download/issues"
   },
-  "homepage": "https://github.com/aserlili/github-release-download#readme"
+  "homepage": "https://github.com/aserlili/gh-release-download#readme"
 }

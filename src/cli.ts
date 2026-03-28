@@ -3,13 +3,14 @@
 import { Command } from 'commander';
 import { GitHubReleaseDownloader } from './github-release.js';
 import { formatBytes } from './utils.js';
+import { PACKAGE_NAME, PACKAGE_VERSION, DESCRIPTION } from './constants.js';
 
 const program = new Command();
 
 program
-  .name('github-release-download')
-  .description('Download files from GitHub Releases with glob pattern support')
-  .version('0.1.0', '-v, --version')
+  .name(PACKAGE_NAME)
+  .description(DESCRIPTION)
+  .version(PACKAGE_VERSION, '-v, --version')
   .argument('<github-url>', 'GitHub repository URL (e.g., https://github.com/owner/repo)')
   .argument('<patterns...>', 'Glob patterns for files to download (e.g., "*.zip", "app-*-linux.tar.gz")')
   .option('-t, --tag <tag>', 'Version tag to download (defaults to latest release)')

@@ -16,6 +16,7 @@ import {
   ParsedRepoUrl,
 } from './types.js';
 import { parseRepoUrl, ensureDir, formatBytes } from './utils.js';
+import { USER_AGENT } from './constants.js';
 
 export class GitHubReleaseDownloader {
   private octokit: Octokit;
@@ -24,7 +25,7 @@ export class GitHubReleaseDownloader {
   constructor(config: GitHubReleaseDownloaderConfig = {}) {
     this.config = {
       baseUrl: 'https://api.github.com',
-      userAgent: 'github-release-download',
+      userAgent: USER_AGENT,
       ...config,
     };
 
@@ -101,8 +102,8 @@ export class GitHubReleaseDownloader {
     await ensureDir(outputDir);
 
     const localPath = `${outputDir}/${asset.name}`;
-    const headers: Record<string, string> = {
-      'user-agent': this.config.userAgent || 'github-release-download',
+const headers: Record<string, string> = {
+      'user-agent': this.config.userAgent || USER_AGENT,
     };
 
     if (token) {
