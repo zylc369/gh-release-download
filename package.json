@@ -1,12 +1,12 @@
 {
-  "name": "gh-release-download",
-  "version": "0.1.0",
-  "description": "Download files from GitHub Releases with glob pattern support",
+  "name": "@zylc369/bw-gh-release-fetch",
+  "version": "0.1.1",
+  "description": "Fetch files from code hosting platforms with glob pattern support",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "gh-release-download": "dist/cli.js"
+    "bw-gh-release-fetch": "dist/cli.js"
   },
   "files": [
     "dist",
@@ -23,12 +23,10 @@
     "release:dry": "npm publish --dry-run"
   },
   "keywords": [
-    "github",
-    "release",
-    "download",
+    "fetch",
     "cli",
     "glob",
-    "asset"
+    "files"
   ],
   "author": "",
   "license": "MIT",

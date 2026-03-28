@@ -211,7 +211,7 @@ bun test/test.ts
 bun run release:dry
 
 # Publish to npm
-npm publish
+npm publish --access public
 ```
 
 ## License
